@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Admin Index
+
+
+{% endblock %}
+
+{% block content %}
+<div class="container" style="position: relative; top: 50px;">
+            <div class="row">
+                <form method="post" class="col-md-12 offset-md-0">
+                    <div class="border border-dark rounded" >
+                            <center><h3 class="border border-dark rounded p-3 mb-2 bg-dark text-white">Short Your URL</h3></center>
+                            <div class="form-group" style="margin: 18px;">
+                            <label for="formGroupExampleInput" class="text-white">Enter Your URL</label>
+                            <input type="url" name="url" class="form-control" placeholder="URL" required><br/>
+                            </div>
+                                <input type="submit" class="btn btn-dark btn-block border border-dark" value="Short">
+                    </div>
+                </form>
+            </div>
+</div>
+
+    {% if data %}
+    <div class="jumbotron jumbotron mt-5" style="border-radius: 10rem; background-color: #7698c39e; top: -100px;">
+  <h1 class="display-4" style="position: relative; top: 24px;">Short URL</h1>
+        <p class="lead" id="url" style="position: relative; top: 26px;">{{ data }}</p>
+  <hr class="my-4">
+  <button class="btn btn-primary btn-lg" onclick="copyToClipboard('#url')" role="button" style="position: relative;top: -73px;left:
+  500px;background-color: #00000066;border-radius: 10rem;border-color: transparent; width: 7%">Copy</button>
+</div>
+    {% endif %}
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+URL List
+
+
+{% endblock %}
+
+{% block content %}
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Full URL</th>
+      <th scope="col">Short URL</th>
+         <th scope="col">Created Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+        <th scope="row">{{ i.full_url }}</th>
+      <td><p id="{{ i.t_id }}" style="color: aqua;">{{ link }}{{ i.url_hash }}</p></td>
+      <td>{{ i.created_at }}</td>
+      <td><button class="btn btn-primary btn-lg" onclick="copyToClipboard('#{{ i.t_id }}')" role="button">Copy</button></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+{% endblock %}

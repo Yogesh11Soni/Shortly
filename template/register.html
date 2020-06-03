@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Register Here</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Merged Forms Page Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+	    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="/static/mycss.css" type="text/css" media="all" /><!-- Style-CSS -->
+</head>
+<body class="bglayer">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"style="position: relative; height: 96px;">
+
+    <a class="navbar-brand " href="/" style="font-size: 2.25rem;position: relative;top: 05px;left: 21px;color: white;">Shortly</a>
+   <!-- /form-26-section -->
+   <section class="form-26-1">
+         <div class="form-26-mian">
+				<div class="layer">
+			<div class="wrapper" style="
+    position: relative;
+    top: 410px;
+    left: 256px;
+">
+			<div class="form-inner-cont">
+					<div class="forms-26-info">
+						<h2>Register</h2>
+                        </div>
+					<div class="form-right-inf" style="position: relative; top: 100px;">
+							<form method="post" class="signin-form">
+							 <div class="forms-gds">
+								 <div  class="form-input">
+									<input type="text" name="f_name" placeholder="Firstname" required />
+								</div>
+								<div  class="form-input">
+										<input type="text" name="l_name" placeholder="Lastname" required />
+									</div>
+								<div  class="form-input">
+									<input type="email" name="email" placeholder="Email" required />
+								</div>
+								<div  class="form-input">
+									<input type="password" name="password" placeholder="Password" required />
+								</div>
+								<div  class="form-input"><button class="btn">Signup</button></div>
+							</div>
+							<h6 class="already">Already have an account? <a href="/login/"><span>Login Here<span></span></span></a></h6>
+						</form>
+						
+                    </div>
+
+                </div>
+			</div>
+		</div>
+		    </div>
+		</section>
+</nav>
+      <!-- //form-26-section -->
+{% if already == True %}
+<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+  <strong>Warning!</strong> User Already Exists.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+<script src="/static/js/jquery-3.5.1.min.js"></script>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>
